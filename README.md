@@ -5,7 +5,10 @@
 First you need to have PostgreSQL v11 installed on your debian (in version 9).
 To install it quickly, we've created a script.
 After cloning the repo and `cd` into the folder, run `./scripts/setup_postgresql.sh`.
-It should ask you the password for `sudo` then it should display something like: `psql (PostgreSQL) 11.3 (Debian 11.3-1.pgdg90+1)`
+
+It should ask you the password for `sudo` then it should display something like:
+![screenshot of setup result](https://raw.githubusercontent.com/tentacode-classroom/postgresql_-2018-05-02-julien-thomas/master/assets/screnshot_setup_result.png)
+
 If not, you have a problem with the installer. Please check the wiki, issues or the officiel documentation.
 
 Go [here](https://www.postgresql.org/download/) for more informations and other OS.
