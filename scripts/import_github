@@ -1,1 +1,3 @@
-wget https://data.gharchive.org/2018-05-02-15.json.gz -P imports/archive.json.gz
+wget https://data.gharchive.org/2018-05-02-15.json.gz -O imports/archive.json.gz
+
+gunzip imports/archive.json.gz
