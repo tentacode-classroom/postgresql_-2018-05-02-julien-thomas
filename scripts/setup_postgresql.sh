@@ -16,7 +16,7 @@ sudo apt-get update
 sudo apt install postgresql-11 -y
 
 # Add space
-echo "\n\n"
+echo -e "\n\n"
 
 # Try the installaion
 echo "[INFO] Version installed : "
