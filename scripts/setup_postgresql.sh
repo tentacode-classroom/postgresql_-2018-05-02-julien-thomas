@@ -25,6 +25,7 @@ psql --version
 # Start service
 echo "[INFO] Starting the service : "
 sudo service postgresql start
+service postgresql status
 
 # END
 echo "[INFO]  SETUP FINISH"
