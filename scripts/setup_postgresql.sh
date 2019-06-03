@@ -15,5 +15,17 @@ sudo apt-get update
 # Install the package
 sudo apt install postgresql-11 -y
 
+# Add space
+echo -e "\n\n"
+
 # Try the installaion
+echo "[INFO] Version installed : "
 psql --version
+
+# Start service
+echo "[INFO] Starting the service : "
+sudo service postgresql start
+service postgresql status
+
+# END
+echo "[INFO]  SETUP FINISH"
