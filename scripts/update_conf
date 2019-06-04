@@ -1,1 +1,2 @@
-sudo -u postgres psql -f ../update_conf.sql
+sudo -u postgres psql -f update_conf.sql
+sudo service postgresql restart
