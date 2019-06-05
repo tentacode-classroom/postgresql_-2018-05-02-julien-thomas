@@ -1,8 +1,0 @@
-if test -f "imports/archive.json"; then
-	echo "the file already exists"
-	rm imports/archive.json
-fi
-
-wget https://data.gharchive.org/2018-05-02-15.json.gz -O imports/archive.json.gz
-
-gunzip imports/archive.json.gz
