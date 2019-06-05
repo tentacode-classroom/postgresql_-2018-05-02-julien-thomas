@@ -3,13 +3,6 @@ CREATE DATABASE github;
 
 \c github;
 
-DROP TABLE IF EXISTS event;
-DROP TABLE IF EXISTS actor;
-DROP TABLE IF EXISTS repo;
-DROP TABLE IF EXISTS issue_event;
-DROP TABLE IF EXISTS push_event;
-
-
 CREATE TABLE actor (
 	id bigint PRIMARY KEY NOT NULL,
 	login varchar(45) NOT NULL,
