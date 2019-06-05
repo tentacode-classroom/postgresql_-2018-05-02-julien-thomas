@@ -1,3 +1,6 @@
 sudo -u postgres psql -f /home/vagrant/projet/scripts/sql/update_conf.sql
 sudo service postgresql restart
 sudo -u postgres psql -c "SELECT name, setting FROM pg_settings WHERE name='port' OR name='work_mem'"
+
+# This command is used as long as I can't login normally to the super_admin user (created later) :
+sudo -u postgres psql -c 'ALTER SYSTEM RESET all' && sudo service postgresql restart
