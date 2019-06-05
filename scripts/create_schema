@@ -1,1 +1,1 @@
-sudo -u postgres psql -f create_schema.sql
+sudo -u postgres psql -f /home/vagrant/projet/scripts/sql/create_schema.sql
