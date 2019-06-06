@@ -1,4 +1,4 @@
-sudo -u postgres psql -f /home/vagrant/projet/scripts/sql/update_conf.sql
+sudo -u postgres psql -f ./scripts/sql/update_conf.sql
 sudo service postgresql restart
 sudo -u postgres psql -c "SELECT name, setting FROM pg_settings WHERE name='port' OR name='work_mem'"
 
