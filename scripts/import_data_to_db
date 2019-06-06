@@ -1,0 +1,2 @@
+psql --username=github -c "DROP TABLE IF EXISTS event_raw; CREATE TABLE event_raw (json_data JSONB NOT NULL);"
+php /home/vagrant/projet/scripts/php/insert_data.php
