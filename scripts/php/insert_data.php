@@ -20,7 +20,8 @@ function addJsons(array $buffer)
     $statement->execute($buffer);
 }
 
-$jsonFilePath = sprintf('%s/../resources/github_data.json', __DIR__);
+// /home/vagrant/projet/imports
+$jsonFilePath = sprintf('%s/../../imports/archive.json', __DIR__);
 
 $handle = fopen($jsonFilePath, 'r');
 
