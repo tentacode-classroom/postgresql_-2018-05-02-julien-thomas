@@ -1,0 +1,2 @@
+# Étape 8 — Insertion du JSON
+psql --username=super_admin -f ./sql/insertion_queries.sql
