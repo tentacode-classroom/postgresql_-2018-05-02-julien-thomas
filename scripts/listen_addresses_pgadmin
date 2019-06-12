@@ -1,0 +1,2 @@
+psql --username=super_admin -c "ALTER SYSTEM SET listen_addresses = '*';"
+sudo service postgresql restart
