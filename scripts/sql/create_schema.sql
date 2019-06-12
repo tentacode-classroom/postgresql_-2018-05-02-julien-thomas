@@ -16,7 +16,7 @@ CREATE TABLE actor (
 
 CREATE TABLE repo (
 	id bigint PRIMARY KEY NOT NULL,
-	name varchar(100) NOT NULL,
+	name varchar(255) NOT NULL,
 	url varchar(255) NOT NULL
 );
 
