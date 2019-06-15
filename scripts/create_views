@@ -1,0 +1,1 @@
+psql --username=super_admin -f ./sql/create_views.sql
