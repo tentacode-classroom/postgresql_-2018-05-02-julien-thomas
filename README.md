@@ -2,7 +2,7 @@
 
 ## Installation
 
-First you need to have PostgreSQL v11 installed on your debian (in version 9).
+First you need to have PostgreSQL v11 installed on your debian (up to date in version 9).
 To install it quickly, we've created a script.
 After cloning the repo and `cd` into the folder, run `./scripts/setup_postgresql.sh`.
 
