@@ -41,7 +41,7 @@ date="$(date +"%d-%m-%Y_%Hh%M")"
 pg_dump --username=github --dbname=github -f ./backups/bck_github_events_$date --clean --if-exists --compress=9
 
 # backup of roles
-pg_dumpall --username=github --roles-only -f ./backups/bck_github_events_roles_$date --clean --if-exists --compress=9
+pg_dumpall --username=github --roles-only -f ./backups/bck_github_events_roles_$date --clean --if-exists
 
 # annonce the end of the script
 echo -e "\n[\e[34mINFO\e[39m] Data backup \e[5mFINISHED\e[25m successfully"
