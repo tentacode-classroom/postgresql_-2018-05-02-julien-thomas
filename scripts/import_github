@@ -49,7 +49,7 @@ gunzip $directoryPath/imports/$date-temp/*.json.gz
 
 
 # merge all data files into a single file
-cat $directoryPath/imports/$date-temp/* > $directoryPath/imports/archives_$date.json
+cat $directoryPath/imports/$date-temp/* > $directoryPath/imports/archives.json
 
 
 # delete temp download folde
