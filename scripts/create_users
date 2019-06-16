@@ -8,4 +8,4 @@ echo "*:5432:github:github:12345" >> ~/.pgpass
 
 chmod 600 ~/.pgpass
 
-psql --username=github -c "SELECT 'You're now connected to github account.';"
+psql --username=github -c "SELECT 'You are now connected to github account.';"
