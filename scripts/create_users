@@ -1,13 +1,13 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
-
 psql --username=postgres -f $DIR/sql/create_user_admin.sql
+
 touch ~/.pgpass
+chmod 600 ~/.pgpass
 echo "*:*:*:super_admin:12345" >> ~/.pgpass
 
 psql --username=super_admin -f $DIR/sql/create_user_github.sql
 echo "*:*:github:github:12345" >> ~/.pgpass
 
-chmod 600 ~/.pgpass
 
 psql --username=github -c "SELECT 'You are now connected to github account.';"
