@@ -1,5 +1,7 @@
 # postgresql_-2018-05-02-julien-thomas
 
+*Note: if one of the script fails to call an SQL file, it is suggested that you `cd` into the scripts directory.*
+
 ## Installation
 
 First you need to have PostgreSQL v11 installed on your debian (up to date in version 9).

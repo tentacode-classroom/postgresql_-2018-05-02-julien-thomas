@@ -38,7 +38,7 @@ date="$(date +"%d-%m-%Y_%Hh%M")"
 
 
 # backup of github_events database
-pg_dump --username=github --dbname=github_events -f ./backups/bck_github_events_$date --clean --if-exists --compress=9
+pg_dump --username=github --dbname=github -f ./backups/bck_github_events_$date --clean --if-exists --compress=9
 
 # backup of roles
 pg_dumpall --username=github --roles-only -f ./backups/bck_github_events_roles_$date --clean --if-exists --compress=9

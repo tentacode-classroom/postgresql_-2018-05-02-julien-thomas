@@ -1,2 +1,4 @@
 # Étape 8 — Insertion du JSON
-psql --username=super_admin -f ./sql/insertion_queries.sql
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+
+psql --username=super_admin -f $DIR/sql/insertion_queries.sql

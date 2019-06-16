@@ -1,3 +1,6 @@
 psql --username=github -c "DROP TABLE IF EXISTS event_raw; CREATE TABLE event_raw (json_data JSONB NOT NULL);"
-php ./scripts/php/insert_data.php
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+
+php $DIR/php/insert_data.php
 psql --username=github -c "SELECT COUNT(*) FROM event_raw;"
