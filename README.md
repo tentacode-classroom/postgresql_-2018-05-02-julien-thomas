@@ -48,11 +48,14 @@ You just need to run it `./scripts/update_configuration`.
 
 ## Create users
 
-To work, the project need to have 2 users (super_admin & github). To setup users just run `./scripts/create_users`
+To work, the project need to have 2 users (super_admin & github). 
+
+First you need to edit the `pg_hba` file to be able to connect on accounts.
+Edit `/etc/postgresql/11/main/pg_hba.conf` as `./etc/pg_hba.conf`.
+
+Then setup users. Just run `./scripts/create_users`
 You can change the passwords by editing the sql script `./scripts/sql/create_user_admin.sql`, `./scripts/sql/create_user_github.sql` and `./scripts/create_users`
 
-After that, you need to edit the `pg_hba` file to be able to connect on accounts.
-Edit `/etc/postgresql/11/main/pg_hba.conf` as `./etc/pg_hba.conf`.
 
 [Documentation](https://www.postgresql.org/docs/9.1/auth-pg-hba-conf.html)
 
