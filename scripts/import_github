@@ -1,11 +1,14 @@
 #!/bin/bash
 
-
 # get or set the working directory
 if [ -z ${1+x} ]
 then
 	directoryPath="."
 else
+	if [ $1 == "--help" ] || [ $1 == "-h" ]
+	then
+		echo "You can specify the working directory as the first argument if you want another one than here. For the rest, just follow the script."
+	fi
 	directoryPath=`echo $1 | sed 's/\///g'`
 fi
 
