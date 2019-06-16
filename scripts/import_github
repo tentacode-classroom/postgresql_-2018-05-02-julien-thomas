@@ -6,7 +6,7 @@ if [ -z ${1+x} ]
 then
 	directoryPath="."
 else
-	directoryPath=$1
+	directoryPath="$1"
 fi
 
 
@@ -20,18 +20,18 @@ then
 	if [ "$CHOICE" = "N" ] || [ "$CHOICE" = "" ]
 	then
 		echo -e "[\e[31mINFO\e[39m] Your old archive(s) has been deleted\e[39m"
-		rm -rf $directoryPath/imports
-		mkdir $directoryPath/imports
+		rm -rf "$directoryPath/imports"
+		mkdir "$directoryPath/imports"
 	else
                 echo -e "[\e[32mINFO\e[39m] Your old archive(s) steel here\e[39m"
 	fi
 else
-		mkdir $directoryPath/imports
+		mkdir "$directoryPath/imports"
 fi
 
 
 # get current date of the download
-date="$(date +"%d-%m-%Y_%kh%M")"
+date="$(date +"%d-%m-%Y_%Hh%M")"
 
 
 # download the archive
