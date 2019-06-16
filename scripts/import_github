@@ -54,4 +54,4 @@ rm -rf $directoryPath/imports/$date-temp
 
 
 # annonce the end of the script
-echo -e \n[\e[34mINFO\e[39m] Import data \e[5mFINISHED\e[25m successfully
+echo -e "\n[\e[34mINFO\e[39m] Import data \e[5mFINISHED\e[25m successfully"
