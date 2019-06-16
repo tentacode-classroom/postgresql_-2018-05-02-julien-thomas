@@ -4,7 +4,7 @@
 
 First you need to have PostgreSQL v11 installed on your debian (up to date in version 9).
 To install it quickly, we've created a script.
-After cloning the repo and `cd` into the folder, run `./scripts/setup_postgresql.sh`.
+After cloning the repo and `cd` into the folder, run `./scripts/setup_postgresql`.
 
 It should ask you the password for `sudo` then it should display something like:
 ![screenshot of setup result](https://raw.githubusercontent.com/tentacode-classroom/postgresql_-2018-05-02-julien-thomas/master/assets/screnshot_setup_result.png)
@@ -37,17 +37,17 @@ It'll automaticly dowwnload multiple data, extract it and concatenated in one da
 
 ## Create database 
 
-To initialize the database you just need to run `./scripts/***`
+To initialize the database you just need to run `./scripts/create_event_database`
 
 ## Alter configuration
 
 If you want to change the port and the memory, we have created a script to optimize it. It's pre-configure. You can change settings by editing global variables of the sql script `./scripts/sql/update_conf.sql`.
-You just need to run it `./scriptupdate_configuration`.
+You just need to run it `./scripts/update_configuration`.
 
 ## Create users
 
 To work, the project need to have 2 users (super_admin & github). To setup users just run `./scripts/create_users`
-You can change the passwords by editing the sql script `./scripts/sql/create_user_admin.sql` et `./scripts/sql/create_user_github.sql`.
+You can change the passwords by editing the sql script `./scripts/sql/create_user_admin.sql`, `./scripts/sql/create_user_github.sql` and `./scripts/create_users`
 
 After that, you need to edit the `pg_hba` file to be able to connect on accounts.
 Edit `/etc/postgresql/11/main/pg_hba.conf` as `./etc/pg_hba.conf`.
@@ -63,3 +63,9 @@ Edit `/etc/postgresql/11/main/pg_hba.conf` as `./etc/pg_hba.conf`.
 1. Edit `/etc/postgresql/11/main/pg_hba.conf` as `./etc/pg_hba.conf`.
 2. Run `./scripts/pg_admin_install`
 3. Download and setup your client with [Official documentation](https://www.pgadmin.org/download/) or use [this](https://askubuntu.com/questions/831262/how-to-install-pgadmin-4-in-desktop-mode-on-ubuntu) thread to install it in your debian distribution.
+
+## Backups
+
+To backup...
+
+For more informations, you can read our short documentation [here](https://github.com/tentacode-classroom/postgresql_-2018-05-02-julien-thomas/blob/master/doc/backup_restore.md)

@@ -11,7 +11,7 @@ if [ -f "$sourceFile" ]
 then
 	echo "You already have PostgreSQL repo in your sources lists"
 else
-	echo "deb http://apt.postgresql.org/pub/repos/apt/ stretch-pgdg main" | sudo tee --append /etc/apt/sources.list.d/pgdg.list
+	echo "deb http://apt.postgresql.org/pub/repos/apt/ stretch-pgdg main" | sudo tee --append $sourceFile
 fi
 
 
