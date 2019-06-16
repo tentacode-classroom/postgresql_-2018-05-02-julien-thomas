@@ -36,21 +36,21 @@ date="$(date +"%d-%m-%Y_%kh%M")"
 
 # download the archive
 echo -e "\n[\e[34mINFO\e[39m] Downloading data...\e[39m"
-mkdir -p $directoryPath/imports/$date-temp
-wget https://data.gharchive.org/2018-05-15-{15..16}.json.gz -P $directoryPath/imports/$date-temp # TODO: ad --quiet
+mkdir -p "$directoryPath/imports/$date-temp"
+wget https://data.gharchive.org/2018-05-15-{15..16}.json.gz -P "$directoryPath/imports/$date-temp" # TODO: ad --quiet
 
 
 # extract archives
 echo -e "\n[\e[34mINFO\e[39m] Extract data...\e[39m"
-gunzip $directoryPath/imports/$date-temp/*.json.gz
+gunzip ""$directoryPath/imports/$date-temp"/*.json.gz"
 
 
 # merge all data files into a single file
-cat $directoryPath/imports/$date-temp/* > $directoryPath/imports/archives_$date.json
+cat ""$directoryPath/imports/$date-temp"/*" > "$directoryPath/imports/archives_$date.json"
 
 
 # delete temp download folde
-rm -rf $directoryPath/imports/$date-temp
+rm -rf "$directoryPath/imports/$date-temp"
 
 
 # annonce the end of the script
