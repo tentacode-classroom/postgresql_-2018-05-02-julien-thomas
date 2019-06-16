@@ -54,9 +54,9 @@ Edit `/etc/postgresql/11/main/pg_hba.conf` as `./etc/pg_hba.conf`.
 
 [Documentation](https://www.postgresql.org/docs/9.1/auth-pg-hba-conf.html)
 
-## Populate raw
+## Populate raw with json
 
-
+To populate the database with imports downloaded before, you just need to launch `./scripts/populate_raw_events` script.
 
 ## Install pgAdmin
 
@@ -64,8 +64,16 @@ Edit `/etc/postgresql/11/main/pg_hba.conf` as `./etc/pg_hba.conf`.
 2. Run `./scripts/pg_admin_install`
 3. Download and setup your client with [Official documentation](https://www.pgadmin.org/download/) or use [this](https://askubuntu.com/questions/831262/how-to-install-pgadmin-4-in-desktop-mode-on-ubuntu) thread to install it in your debian distribution.
 
+## Populate raw
+
+To populate the database with imports downloaded before, you just need to launch `./scripts/populate_events` script.
+
+## Create views
+
+To create view you just need to launch `./scripts/create_views` script.
+
 ## Backups
 
-To backup...
+To backup the data of the database `github_events` with it's roles, you just need to launch `./scripts/backup` script.
 
-For more informations, you can read our short documentation [here](https://github.com/tentacode-classroom/postgresql_-2018-05-02-julien-thomas/blob/master/doc/backup_restore.md)
+For more informations about backup, you can read our short documentation [here](https://github.com/tentacode-classroom/postgresql_-2018-05-02-julien-thomas/blob/master/doc/backup_restore.md)
