@@ -1,0 +1,47 @@
+#!/bin/bash
+
+# get or set the working directory
+if [ -z ${1+x} ]
+then
+	directoryPath="."
+else
+	if [ $1 == "--help" ] || [ $1 == "-h" ]
+	then
+		echo "You can specify the working directory as the first argument if you want another one than here. For the rest, just follow the script."
+	fi
+	directoryPath=`echo $1 | sed 's/\///g'`
+fi
+
+
+# search for previous backups. Delete them or not. If not exist, create the destination folder
+if [ -d "$directoryPath/backups" ]
+then
+	echo -e "[\e[34mINFO\e[39m] Backup(s) already exist !"
+
+	read -p "	Keep old data ? (o/N)" CHOICE
+
+	if [ "$CHOICE" = "N" ] || [ "$CHOICE" = "" ]
+	then
+		echo -e "[\e[31mINFO\e[39m] Your old backup(s) has been deleted\e[39m"
+		rm -rf "$directoryPath/backups"
+		mkdir "$directoryPath/backups"
+	else
+                echo -e "[\e[32mINFO\e[39m] Your old backup(s) steel here\e[39m"
+	fi
+else
+		mkdir "$directoryPath/backups"
+fi
+
+
+# get current date of the download
+date="$(date +"%d-%m-%Y_%Hh%M")"
+
+
+# backup of github_events database
+pg_dump --username=github --dbname=github_events -f ./backups/bck_github_events_$date --clean -if-exists --compress=9
+
+# backup of roles
+pg_dumpall --username=github --roles-only -f ./backups/bck_github_events_roles_$date --clean -if-exists --compress=9
+
+# annonce the end of the script
+echo -e "\n[\e[34mINFO\e[39m] Data backup \e[5mFINISHED\e[25m successfully"
