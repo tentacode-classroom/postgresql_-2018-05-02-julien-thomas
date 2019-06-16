@@ -42,11 +42,11 @@ wget https://data.gharchive.org/2018-05-15-{15..16}.json.gz -P "$directoryPath/i
 
 # extract archives
 echo -e "\n[\e[34mINFO\e[39m] Extract data...\e[39m"
-gunzip ""$directoryPath/imports/$date-temp"/*.json.gz"
+gunzip "$directoryPath/imports/$date-temp/*.json.gz"
 
 
 # merge all data files into a single file
-cat ""$directoryPath/imports/$date-temp"/*" > "$directoryPath/imports/archives_$date.json"
+cat "$directoryPath/imports/$date-temp/*" > "$directoryPath/imports/archives_$date.json"
 
 
 # delete temp download folde
