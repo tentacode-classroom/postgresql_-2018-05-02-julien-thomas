@@ -1,31 +1,46 @@
 #!/bin/bash
 
-# Update & cleanup the system
-sudo apt update && sudo apt upgrade && sudo apt full-upgrade && sudo apt autoremove
+# Update the lists
+sudo apt update
+
 
 # Add the repository in sources
-echo "deb http://apt.postgresql.org/pub/repos/apt/ stretch-pgdg main" | sudo tee --append /etc/apt/sources.list.d/pgdg.list
+sourceFile=/etc/apt/sources.list.d/pgdg.list
+
+if [ -f "$sourceFile" ]
+then
+	echo "You already have PostgreSQL repo in your sources lists"
+else
+	echo "deb http://apt.postgresql.org/pub/repos/apt/ stretch-pgdg main" | sudo tee --append /etc/apt/sources.list.d/pgdg.list
+fi
+
 
 # Import the repository signing key
 wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add
 
-# Update the package lists
-sudo apt-get update
 
-# Install the package
+# Update the package lists
+sudo apt update
+
+
+# Install the package PostegreSQL
 sudo apt install postgresql-11 -y
 
-# Add space
+
+# Add space for clear output
 echo -e "\n\n"
 
-# Try the installaion
+
+# Test the installaion and display the version
 echo "[INFO] Version installed : "
 psql --version
 
-# Start service
+
+# Start the service and give it status (get port number)
 echo "[INFO] Starting the service : "
 sudo service postgresql start
 service postgresql status
+
 
 # END
 echo "[INFO]  SETUP FINISH"
