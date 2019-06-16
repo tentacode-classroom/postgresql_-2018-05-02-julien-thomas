@@ -1,12 +1,12 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
-touch ~/.pgpass
 
 psql --username=postgres -f $DIR/sql/create_user_admin.sql
-echo "*:5432:*:super_admin:12345" >> ~/.pgpass
+touch ~/.pgpass
+echo "*:*:*:super_admin:12345" >> ~/.pgpass
 
 psql --username=super_admin -f $DIR/sql/create_user_github.sql
-echo "*:5432:github:github:12345" >> ~/.pgpass
+echo "*:*:github:github:12345" >> ~/.pgpass
 
 chmod 600 ~/.pgpass
 
