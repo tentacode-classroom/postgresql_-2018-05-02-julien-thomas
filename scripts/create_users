@@ -1,1 +1,11 @@
-sudo -u postgres psql -f ./scripts/sql/create_users.sql
+touch ~/.pgpass
+
+sudo -u postgres psql -f ./scripts/sql/create_user_admin.sql
+echo "*:5432:*:super_admin:12345" >> ~/.pgpass
+
+sudo -u super_admin psql -f ./scripts/sql/create_user_github.sql
+echo "*:5432:github:github:12345" >> ~/.pgpass
+
+chmod 600 ~/.pgpass
+
+psql --username=github -c "SELECT 'You're now connected to github account.';"
