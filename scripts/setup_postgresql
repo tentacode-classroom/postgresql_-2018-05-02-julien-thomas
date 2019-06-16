@@ -24,7 +24,7 @@ sudo apt update
 
 
 # Install the package PostegreSQL
-sudo apt install postgresql-11 -y
+sudo apt install postgresql-11 php php-pgsql -y
 
 
 # Add space for clear output
